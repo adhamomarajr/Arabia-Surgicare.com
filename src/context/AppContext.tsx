@@ -50,7 +50,7 @@ export function sanitizeDoctor(raw: any, fallback?: Doctor): Doctor {
   const education = getNameObj(raw?.education, match.education);
   const bio = getNameObj(raw?.bio, match.bio);
   const achievements = getArrayObj(raw?.achievements, match.achievements);
-  const specializations = getArrayObj(raw?.specializations, match.specializations || { ar: [], en: [] });
+  const specializations = getArrayObj(raw?.specializations, match.specializations);
 
   return {
     id: String(raw?.id || match.id),

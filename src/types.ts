@@ -1,53 +1,97 @@
 export type Language = 'ar' | 'en';
 
-export interface LocalizedString {
-  ar: string;
-  en: string;
-}
-
-export interface LocalizedStringArray {
-  ar: string[];
-  en: string[];
-}
-
 export interface DoctorCvDocument {
-  title: LocalizedString;
-  degrees: LocalizedStringArray;
-  positions: LocalizedStringArray;
-  fullBiography: LocalizedString;
-  areasOfInterest: LocalizedStringArray;
-  memberships: LocalizedStringArray;
+  title: {
+    ar: string;
+    en: string;
+  };
+  degrees: {
+    ar: string[];
+    en: string[];
+  };
+  positions: {
+    ar: string[];
+    en: string[];
+  };
+  fullBiography: {
+    ar: string;
+    en: string;
+  };
+  areasOfInterest: {
+    ar: string[];
+    en: string[];
+  };
+  memberships: {
+    ar: string[];
+    en: string[];
+  };
 }
 
 export interface Doctor {
   id: string;
   specialtyId: string;
-  name: LocalizedString;
-  title: LocalizedString;
-  image?: string;
-  experienceYears?: number;
+  name: {
+    ar: string;
+    en: string;
+  };
+  title: {
+    ar: string;
+    en: string;
+  };
+  image: string;
+  experienceYears: number;
   available: boolean;
-  whatsapp?: string;
-  timing: LocalizedString;
-  education: LocalizedString;
-  bio: LocalizedString;
-  achievements: LocalizedStringArray;
-  specializations?: LocalizedStringArray;
+  whatsapp: string;
+  timing: {
+    ar: string;
+    en: string;
+  };
+  education: {
+    ar: string;
+    en: string;
+  };
+  bio: {
+    ar: string;
+    en: string;
+  };
+  achievements: {
+    ar: string[];
+    en: string[];
+  };
+  specializations: {
+    ar: string[];
+    en: string[];
+  };
   cvDocument?: DoctorCvDocument;
 }
 
 export interface Specialty {
   id: string;
   icon: string;
-  name: LocalizedString;
-  description: LocalizedString;
+  name: {
+    ar: string;
+    en: string;
+  };
+  description: {
+    ar: string;
+    en: string;
+  };
 }
 
 export interface Department {
   id: string;
   specialtyId: string;
-  title: LocalizedString;
-  desc: LocalizedString;
+  title: {
+    ar: string;
+    en: string;
+  };
+  desc: {
+    ar: string;
+    en: string;
+  };
   icon: string;
-  features: LocalizedStringArray;
+  features: {
+    ar: string[];
+    en: string[];
+  };
 }
